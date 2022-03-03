@@ -39,6 +39,8 @@ npm i eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prett
 npm i tailwindcss postcss autoprefixer
 # add tailwind config files
 npx tailwindcss init -p
+# tailwind hero ui/icons
+npm install @headlessui/react @heroicons/react
 ```
 
 ## package.json
