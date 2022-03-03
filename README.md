@@ -98,7 +98,17 @@ module.exports = {
     autoprefixer: {},
   },
 };
-
+// jsconfig.json
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "@styles/*": [
+                "styles/*"
+            ],
+        }
+    }
+}
 ```
 
 ```css
