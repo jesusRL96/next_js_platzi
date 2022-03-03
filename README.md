@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -32,3 +30,80 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## npm installs
+```bash
+# EsLint, Prettier - files (.eslintrc.js, prettier.config.js)
+npm i eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prettier -D
+# PostCSS, Tailwind
+npm i tailwindcss postcss autoprefixer
+# add tailwind config files
+npx tailwindcss init -p
+```
+
+## package.json
+```js
+// Scripts
+"lint:fix": "eslint src/ --fix"
+```
+
+## config files
+```js
+// prettrier.config.js
+module.exports = {
+  semi: true,
+  singleQuote: true,
+  printWidth: 200,
+  tabWidth: 2,
+  trailingComma: 'es5',
+  bracketSpacing: true,
+};
+// .eslintrc.js
+module.exports = {
+  env: {
+    browser: true,
+    amd: true,
+    node: true,
+    es6: true,
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "next",
+    "next/core-web-vitals",
+  ],
+  rules: {
+    semi: ["error", "always"],
+  },
+};
+// tailwind.config.js
+const colors = require('tailwindcss/colors');
+
+module.exports = {
+  purge: ['./src/**/*{html,js}'],
+  content: [],
+  theme: {
+    colors: {
+      ...colors,
+    },
+    extend: {},
+  },
+  plugins: [],
+};
+// postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
+```
+
+```css
+/*tailwind.css*/
+@tailwind base;
+@tailwind component;
+@tailwind utilities;
+```
