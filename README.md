@@ -108,6 +108,15 @@ module.exports = {
             "@styles/*": [
                 "styles/*"
             ],
+            "@common/*": [
+                "common/*"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@layout/*": [
+                "layout/*"
+            ],
         }
     }
 }
