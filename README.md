@@ -41,6 +41,9 @@ npm i tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 # tailwind hero ui/icons
 npm install @headlessui/react @heroicons/react
+# js-cookie, axios
+npm i js-cookie
+npm i axios
 ```
 
 ## package.json
@@ -116,6 +119,12 @@ module.exports = {
             ],
             "@layout/*": [
                 "layout/*"
+            ],
+            "@services/*": [
+                "services/*"
+            ],
+            "@hooks/*": [
+                "hooks/*"
             ],
         }
     }
