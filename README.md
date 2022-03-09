@@ -44,6 +44,8 @@ npm install @headlessui/react @heroicons/react
 # js-cookie, axios
 npm i js-cookie
 npm i axios
+# chart js
+npm i chart.j react-chartjs-2
 ```
 
 ## package.json
