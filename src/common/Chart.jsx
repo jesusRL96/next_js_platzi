@@ -1,7 +1,7 @@
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, ToolTip, Legend } from 'char.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, ToolTip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export const Chart = ({ chartData }) => {
   return (
@@ -15,9 +15,9 @@ export const Chart = ({ chartData }) => {
             fontSize: 20,
           },
           legend: {
-              display: true,
-              position: 'right',
-          }
+            display: true,
+            position: 'right',
+          },
         }}
       />
     </>
