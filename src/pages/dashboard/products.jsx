@@ -1,20 +1,33 @@
-import { useState, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '@common/Modal';
 import FormProduct from '@components/FormProduct';
-
-/* This example requires Tailwind CSS v2.0+ */
-import { PlusIcon, ChevronDownIcon} from '@heroicons/react/solid';
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
+import endPoints from '@services/api';
+import axios from 'axios';
+import { PlusIcon } from '@heroicons/react/solid';
+import Alert from '@common/Alert';
+import useAlert from '@hooks/useAlert';
 
 export default function Product() {
   const [products, setProducts] = useState([]);
   const [open, setOpen] = useState(false);
+  const {alert, setAlert, toggleAlert} = useAlert();
+
+  useEffect(() => {
+    async function getProducts() {
+      const response = await axios.get(endPoints.products.allProducts);
+      setProducts(response.data);
+    }
+
+    try {
+      getProducts();
+    } catch (error) {
+      console.log(error);
+    }
+  }, [alert]);
 
   return (
     <>
+      <Alert alert={alert} handleClose={toggleAlert} />
       <div className="lg:flex lg:items-center lg:justify-between">
         <div className="flex-1 min-w-0">
           <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">List of products</h2>
@@ -99,7 +112,7 @@ export default function Product() {
         </div>
       </div>
       <Modal open={open} setOpen={setOpen}>
-          <FormProduct />
+        <FormProduct setOpen={setOpen} setAlert={setAlert} />
       </Modal>
     </>
   );
