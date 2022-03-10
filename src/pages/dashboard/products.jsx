@@ -1,5 +1,6 @@
 import { useState, Fragment } from 'react';
 import Modal from '@common/Modal';
+import FormProduct from '@components/FormProduct';
 
 /* This example requires Tailwind CSS v2.0+ */
 import { PlusIcon, ChevronDownIcon} from '@heroicons/react/solid';
@@ -98,7 +99,7 @@ export default function Product() {
         </div>
       </div>
       <Modal open={open} setOpen={setOpen}>
-          <h1>Hola mundo</h1>
+          <FormProduct />
       </Modal>
     </>
   );

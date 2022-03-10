@@ -46,6 +46,8 @@ npm i js-cookie
 npm i axios
 # chart js
 npm i chart.j react-chartjs-2
+# tailwind forms
+npm i @tailwindcss/forms
 ```
 
 ## package.json
