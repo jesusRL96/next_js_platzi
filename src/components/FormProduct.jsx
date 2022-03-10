@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { addProduct } from '@services/api/poducts';
+import { addProduct } from '@services/api/products';
 
 export default function FormProduct({ setOpen, setAlert }) {
   const formRef = useRef(null);
