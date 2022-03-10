@@ -7,6 +7,7 @@ import { PlusIcon, XCircleIcon } from '@heroicons/react/solid';
 import Alert from '@common/Alert';
 import useAlert from '@hooks/useAlert';
 import { deleteProduct } from '@services/api/products';
+import Link from 'next/link';
 
 export default function Product() {
   const [products, setProducts] = useState([]);
@@ -106,9 +107,9 @@ export default function Product() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{product.id}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                        <Link href={`/dashboard/edit/${product.id}`} className="text-indigo-600 hover:text-indigo-900">
                           Edit
-                        </a>
+                        </Link>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <XCircleIcon className="flex-shrink-0 h-6 w-6 text-gray-400 cursor-pointer" aria-hidden="true" onClick={() => handleDelete(product.id)} />

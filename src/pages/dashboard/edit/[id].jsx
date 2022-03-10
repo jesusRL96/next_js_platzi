@@ -7,6 +7,7 @@ import endPoints from '@services/api';
 export default function Edit() {
   const [product, setProduct] = useState();
   const router = useRouter();
+
   useEffect(() => {
     if (!router.isReady) return;
     const { id } = router.query;
@@ -16,5 +17,9 @@ export default function Edit() {
     }
     getProduct();
   }, [router?.isReady]);
-  return <FormProduct product={product} />;
+  return (
+    <>
+      <FormProduct product={product} />
+    </>
+  );
 }
